@@ -1,0 +1,18 @@
+backbones: lưu pretrained body và head của model
+----model_class: file định nghĩa Transfered_Model bằng LightningModule 
+
+dataloader: file chuẩn bị dữ liệu
+----dataprocess: chứa prepare_data(), get dataloader và setup() của LDM
+
+pizza_steak_sushi: file chứa dữ liệu huấn luyện và test
+----train
+--------pizza
+--------steak
+--------sushi
+----test
+
+tb_log: thư mục lưu log của TensorBoardLogger
+logger.py: chứa hàm trainer() và hàm lr_find()
+train.py: file chạy huấn luyện cho mô hình
+test.py: file chạy model_checker và test
+model_checker: chứa hàm preg_and_plot dự đoán 3 ảnh ngẫu nhiên trong tập test và show_confusion_matrix
